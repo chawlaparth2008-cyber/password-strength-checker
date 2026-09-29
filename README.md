@@ -1,62 +1,37 @@
-# Password Strength Checker
+# Password Strength Checker — Project Statement
 
-A beginner-friendly Python command-line project that checks a password against five composition rules and prints the results with suggestions for any rules it does not meet.
+## Purpose
 
-## Features
+This project is a beginner-friendly Python command-line program that evaluates a password against five simple composition requirements and reports which requirements are met.
 
-- Checks for a minimum length of 15 characters
-- Checks for at least one digit, uppercase letter, lowercase letter, and configured special character
-- Shows the number of requirements met and a simple strength label
-- Suggests which requirements are missing
-- Uses Python's standard library; no extra packages are required
+## Scope
 
-The special characters recognized by this version are: `!@#$%^&*()-_=+[];:,`.
+The checker evaluates whether the entered text:
 
-## Requirements
+1. Contains at least 15 characters.
+2. Contains at least one digit.
+3. Contains at least one uppercase letter.
+4. Contains at least one lowercase letter.
+5. Contains at least one configured special character from `!@#$%^&*()-_=+[];:,`.
 
-- Python 3
-
-## Run the project
-
-1. Download or clone this repository.
-2. Open a terminal in the project folder.
-3. Run:
-
-   ```bash
-   python passwordstrengthchecker.py
-   ```
-
-   On some systems, use `python3` instead of `python`.
-4. Enter a sample password when prompted. The program checks one entry and then exits.
+It reports the number of requirements met, provides a simple strength label, and suggests any unmet requirements. It checks one entry and then exits. The project uses Python's standard library and requires Python 3.
 
 ## Strength labels
 
-- **Weak:** fewer than 15 characters, or at most 2 of the 5 rules pass
-- **Medium:** at least 15 characters and 3 or 4 rules pass
-- **Strong:** at least 15 characters and all 5 rules pass
+- **Weak:** The input is shorter than 15 characters, or no more than two requirements are met.
+- **Medium:** The input is at least 15 characters long and three or four requirements are met.
+- **Strong:** The input is at least 15 characters long and all five requirements are met.
 
-These labels are based only on this project's rules. They are not a reliable measure of real-world password security and do not check for common or compromised passwords.
+## Limitations and safe use
 
-## Privacy and safe use
+These labels reflect only the project's five rules. They do not establish real-world password security or check whether a password is common or compromised. The program does not intentionally save the entered value or send it to a network service, but terminal input is visible while typing. Use fictional sample passwords only; do not enter a real password.
 
-The program does not intentionally save the entered value to a file or send it to a network service. However, it uses ordinary terminal input, and this is an educational demonstration rather than a security product. Use a fictional sample; do not enter a real password.
+## How to run
 
-## Testing
+From the project folder, run:
 
-Try fictional inputs that cover the following cases:
+```bash
+python passwordstrengthchecker.py
+```
 
-- Empty input
-- Fewer than 15 characters
-- A 15-character-or-longer input missing one rule at a time
-- An input meeting all five rules
-
-The output should show each rule's result and suggestions for rules that were not met.
-
-## Project files
-
-- `passwordstrengthchecker.py` - Python source code for the checker
-- `README.md` - Project overview and instructions
-
-## License
-
-No license has been selected for this project.
+On some systems, use `python3` instead of `python`.
